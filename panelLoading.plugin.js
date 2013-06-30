@@ -8,7 +8,7 @@
 			opacity: 		'0.8',
 			text: 			'Loading...',
 			textClass: 		'text-info',
-			loaderClass: 	'progress-striped active shadow',
+			loaderClass: 	'progress-striped active',
 			loaderWidth:	'100%',
 			fadeDuration:	500,
 			fromTop:		false,
