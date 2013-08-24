@@ -42,17 +42,19 @@
 			if(!this.hasClass('panel-loading-base-element')){
 				this.addClass('panel-loading-base-element');
 			}
-			// Wrap the contents of the div in the container.
-			this.wrapInner('<div class="panel-loading-container" />');
 			// Initialize the loading panel
-			var $overlay = $('<div class="panel-loading-overlay" />')	
-					.width(this.width())
-					.height(this.height())
+			var $innerWrapper = $('<div class="panel-loading-container" />')
+					.height(this.outerHeight()),
+				$overlay = $('<div class="panel-loading-overlay" />')	
+					.width(this.outerWidth() - parseFloat(this.css('border-left-width')) - parseFloat(this.css('border-right-width')))
+					.height(this.outerHeight() - parseFloat(this.css('border-top-width')) - parseFloat(this.css('border-bottom-width')))
 					.css({
 						'border-radius': this.css('border-radius'),
 						'background-color': settings.color,
 						'opacity': settings.opacity,
-						'filter': 'alpha(opacity=' + (parseInt(settings.opacity, 10) * 100 ).toString() + ')'
+						'filter': 'alpha(opacity=' + (parseInt(settings.opacity, 10) * 100 ).toString() + ')',
+						'left': '-'+this.css('padding-left'),
+						'top': '-'+this.css('padding-top')
 					})
 					.hide(),
 				$loadingPanel = $('<div class="panel-loading-info-panel" />')
@@ -66,8 +68,10 @@
 					)
 					.hide();
 			
+			// Wrap the contents of the div in the container.
+			this.wrapInner($innerWrapper);
 			
-			this.children().first().append($overlay);
+			this.children(':first').append($overlay);
 			$overlay.fadeIn(fadeDuration);
 			
 			if(settings.text){
@@ -75,7 +79,7 @@
 						$('<span class="'+settings.textClass+'" />').html(settings.text)
 				);
 			}
-			this.children().first().append($loadingPanel);
+			this.children(':first').append($loadingPanel);
 			$loadingPanel.css('margin-top', ($loadingPanel.height() / 2) * -1)
 						 .fadeIn(fadeDuration);
 		}
