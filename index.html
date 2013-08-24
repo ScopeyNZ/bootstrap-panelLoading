@@ -7,6 +7,8 @@
     <meta name="description" content="Bootstrap-panelloading : A simple jQuery plugin to create a bootstrap themed loading modal over the top of a selected element." />
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/prettyprint.css">
 
     <title>Bootstrap-panelloading</title>
   </head>
@@ -19,7 +21,7 @@
           <a id="forkme_banner" href="https://github.com/ScopeyNZ/bootstrap-panelLoading">View on GitHub</a>
 
           <h1 id="project_title">Bootstrap-panelloading</h1>
-          <h2 id="project_tagline">A simple jQuery plugin to create a bootstrap themed loading modal over the top of a selected element.</h2>
+          <h2 id="project_tagline">A simple jQuery plugin to create a bootstrap themed loading overlay over an element.</h2>
 
             <section id="downloads">
               <a class="zip_download_link" href="https://github.com/ScopeyNZ/bootstrap-panelLoading/zipball/master">Download this project as a .zip file</a>
@@ -31,11 +33,61 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+<h2>Demo</h2>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+<!-- <a href="#">View the demo here</a> -->
+Coming Soon
 
+<h2>Usage</h2>
+
+<p>Select an element with jQuery selectors and use the <code>panelLoading</code> method.</p>
+
+<pre class="prettyprint"><code>$('div').panelLoading();</code></pre>
+
+<p>Disable the loading panel by calling the <code>panelLoading</code> method again:</p>
+
+<pre class="prettyprint"><code>$('div').panelLoading();</code></pre>
+
+<p>Settings are defined on initialization (showing defaults):</p>
+
+<pre class="prettyprint"><code>$('div').panelLoading({
+    setLoading:         null,
+    color:              '#fff',
+    opacity:            '0.8',
+    text:               'Loading...',
+    textClass:          'text-info',
+    loaderClass:        'progress-striped active',
+    loaderWidth:        '100%',
+    fadeDuration:       500,
+    fromTop:            false,
+});</code></pre>
+
+<p>Description of settings:</p>
+
+<ul>
+<li>setLoading - Set to true or false to force the panel to load/stop loading</li>
+<li>color - The colour of the overlay.</li>
+<li>opacity - The opacity of the overlay.</li>
+<li>text - The text to appear above the loading bar. Can be set to null to remove the text all together</li>
+<li>textClass - Any classes to be applied to the text above the loading bar.</li>
+<li>loaderWidth - The width of the loading bar</li>
+<li>fadeDuration - The time in milliseconds it will take for the loading panel/overlay to appear and disappear.</li>
+<li>fromTop - A distance, in pixels, for the information panel to appear from the top of the loading element. Useful for whole page loads (<code class="prettyprint">$('body').panelLoading();</code>).</li>
+</ul>
+
+<h2>Copyright and license:</h2>
+
+<p>Copyright &copy; 2013 bootstrap-panelLoading</p>
+
+<p>Licensed under the MIT license.</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+
+<br><br>
 <pre><code>$ cd your_repo_root/repo_name
 $ git fetch origin
 $ git checkout gh-pages
