@@ -1,0 +1,27 @@
+.my-btn{
+	border: none; 
+	background-color: #0090ff; 
+	padding: 10px 20px; 
+	color: #fff; 
+	font-family: 'Lucida Grande', 'Calibri', Helvetica, Arial, sans-serif; 
+	font-size: 16px;
+	cursor: pointer;
+}
+.my-btn:hover{
+	background-color: #33a6ff;
+}
+.my-btn:active{
+	background-color: #0082e6;
+}
+
+div.demo-pane{
+	height: 200px;
+	width: 100%;
+	border: 1px solid #ccc;
+	background-color: #fff;
+	text-align: center;
+	padding: 10px 4px 7px 15px;
+}
+div.demo-pane .my-btn{
+	margin: 80px auto 0 auto;
+}
